@@ -9,9 +9,7 @@ def flip_dict_of_lists(d, dict_type=None, key_func=None):
         for value in value_list:
             if key_func:
                 value = key_func(value)
-            try:
-                result[value]
-            except KeyError:
+            if value not in result:
                 result[value] = []
             result[value].append(key)
 
