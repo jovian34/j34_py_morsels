@@ -30,7 +30,7 @@ class MatrixFromStringTests(unittest.TestCase):
         self.assertEqual([[9, 8, 7], [19, 18, 17]], matrix)
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    #@unittest.expectedFailure
     def test_lots_of_space(self):
         expected = [
             [ 1,  5,  8, 10],
