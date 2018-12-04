@@ -1,6 +1,7 @@
 
 def count_words(words):
-    word_list = words.split().strip(' !,.?:;')
+    word_list = words.split()
+    word_list = [word.strip(' ¿!,.?:;').lower() for word in word_list]
     word_dict = {}
     for word in word_list:
         if word in word_dict:
