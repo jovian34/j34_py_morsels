@@ -1,0 +1,9 @@
+[
+  "test_matrix.py::MatrixFromStringTests::test_empty",
+  "test_matrix.py::MatrixFromStringTests::test_extra_newline",
+  "test_matrix.py::MatrixFromStringTests::test_floating_point_numbers",
+  "test_matrix.py::MatrixFromStringTests::test_lots_of_space",
+  "test_matrix.py::MatrixFromStringTests::test_single_item",
+  "test_matrix.py::MatrixFromStringTests::test_three_by_two_matrix",
+  "test_matrix.py::MatrixFromStringTests::test_two_by_two_matrix"
+]

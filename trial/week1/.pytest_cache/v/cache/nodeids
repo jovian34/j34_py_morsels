@@ -1,0 +1,11 @@
+[
+  "test_numeric_range.py::NumericRangeTests::test_mixed_types",
+  "test_numeric_range.py::NumericRangeTests::test_negative_numbers",
+  "test_numeric_range.py::NumericRangeTests::test_ordered_numbers",
+  "test_numeric_range.py::NumericRangeTests::test_returns_zero_for_empty_list",
+  "test_numeric_range.py::NumericRangeTests::test_same_item_multiple_times",
+  "test_numeric_range.py::NumericRangeTests::test_single_item",
+  "test_numeric_range.py::NumericRangeTests::test_very_large_numbers",
+  "test_numeric_range.py::NumericRangeTests::test_with_non_lists",
+  "test_numeric_range.py::NumericRangeTests::test_with_out_of_order_numbers"
+]

@@ -1,0 +1,7 @@
+[
+  "test_flip.py::FlipDictOfListsTest::test_custom_dict_type",
+  "test_flip.py::FlipDictOfListsTest::test_flip_dict_of_lists",
+  "test_flip.py::FlipDictOfListsTest::test_key_function",
+  "test_flip.py::FlipDictOfListsTest::test_original_key_order_ordered_maintained",
+  "test_flip.py::FlipDictOfListsTest::test_works_with_other_dict_types"
+]
