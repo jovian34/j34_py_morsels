@@ -1,26 +1,17 @@
-def float_range(*args):
-    if len(args) == 1:
-        current = 0.0
-        while current < args[0]:
-            yield current
-            current += 1.0
-    if len(args) == 2:
-        current = args[0]
-        while current < args[1]:
-            yield current
-            current += 1.0
-    if len(args) == 3:
-        current = args[0]
-        if args[2] > 0:
-            while current < args[1]:
-                yield current
-                current += args[2]
-        else:
-            while current > args[1]:
-                yield current
-                current += args[2]
+def float_range(start, stop='tester', step=1):
+    if stop == 'tester':
+        start, stop = 0, start
+    if step < 0:
+        while start > stop:
+            yield start
+            start = step + start
+    else:
+        while start < stop:
+            yield start
+            start += step
+
 
 if __name__ == "__main__":
-    result = float_range(12.0, 5.0, -0.5)
+    result = float_range(5, 1, -1)
     for value in result:
         print(value)
