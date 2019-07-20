@@ -1,5 +1,5 @@
 
-class float_range:
+class FloatRange:
 
     def __init__(self, start, stop='tester', step=1.0):
         self.start = start
@@ -21,3 +21,5 @@ class float_range:
                 yield current_value
                 current_value += self.step
 
+
+float_range = FloatRange
