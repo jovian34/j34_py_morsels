@@ -10,8 +10,3 @@ def float_range(start, stop='tester', step=1):
             yield start
             start += step
 
-
-if __name__ == "__main__":
-    result = float_range(5, 1, -1)
-    for value in result:
-        print(value)
