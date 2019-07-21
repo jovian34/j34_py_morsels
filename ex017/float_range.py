@@ -12,6 +12,14 @@ class FloatRange:
             self.stop = float(stop)
         self.step = float(step)
 
+    def __eq__(self, other):
+        if other.__class__ is not self.__class__:
+            return NotImplemented
+        if self.__len__() == 0:
+            return (self.__len__(), self.step) == (other.__len__(), other.step)
+        else:
+            return (self.start, self.__len__(), self.step) == (other.start, other.__len__(), other.step)
+
     def __iter__(self):
         current_value, local_stop = self.start, self.stop
 
