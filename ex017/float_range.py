@@ -4,18 +4,16 @@ from math import ceil
 class FloatRange:
 
     def __init__(self, start, stop='tester', step=1.0):
-        self.start = float(start)
-        try:
+        if stop == 'tester':
+            self.start = 0.0
+            self.stop = start
+        else:
+            self.start = float(start)
             self.stop = float(stop)
-        except ValueError:
-            self.stop = stop
         self.step = float(step)
 
     def __iter__(self):
-        if self.stop == 'tester':
-            current_value, local_stop = 0, self.start
-        else:
-            current_value, local_stop = self.start, self.stop
+        current_value, local_stop = self.start, self.stop
 
         if self.step < 0:
             while current_value > local_stop:
@@ -27,8 +25,6 @@ class FloatRange:
                 current_value += self.step
 
     def __len__(self):
-        if self.stop == 'tester':
-            return int(self.start)
         difference = (self.stop - self.start)
         if self.step > 0 > difference:
             return 0
@@ -37,10 +33,7 @@ class FloatRange:
         return ceil(difference / self.step)
 
     def __reversed__(self):
-        if self.stop == 'tester':
-            current_value = self.start - self.step
-        else:
-            current_value = self.start + (self.step * (len(self) - 1))
+        current_value = self.start + (self.step * (len(self) - 1))
 
         for i in range(len(self)):
             yield current_value
