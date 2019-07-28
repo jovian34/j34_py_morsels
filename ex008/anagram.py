@@ -6,7 +6,6 @@ def is_anagram(word1: str, word2: str) -> bool:
     first_word = word1.lower().replace(' ', '')
     second_word = word2.lower().replace(' ', '')
 
-    print(string.punctuation)
     translator = str.maketrans('', '', string.punctuation)
     first_word_no_punc = first_word.translate(translator)
     second_word_no_punc = second_word.translate(translator)
