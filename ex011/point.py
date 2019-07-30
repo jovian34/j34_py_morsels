@@ -47,3 +47,12 @@ class Point:
         y = self.y - other.y
         z = self.z - other.z
         return Point(x, y, z)
+
+    def __mul__(self, other):
+        x = self.x * other
+        y = self.y * other
+        z = self.z * other
+        return Point(x, y, z)
+
+    def __rmul__(self, other):
+        return self.__mul__(other)
