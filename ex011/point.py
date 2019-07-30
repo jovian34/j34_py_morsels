@@ -56,3 +56,9 @@ class Point:
 
     def __rmul__(self, other):
         return self.__mul__(other)
+
+    def __iter__(self):
+        yield self.x
+        yield self.y
+        yield self.z
+
