@@ -5,7 +5,10 @@ def parse_ranges(range_string: str):
         if "-" in a_range:
             start, finish = a_range.split('-')
             start = int(start)
-            finish = int(finish)
+            try:
+                finish = int(finish)
+            except ValueError:
+                finish = start
             output_range = range(start, finish + 1)
             for value in output_range:
                 yield value
