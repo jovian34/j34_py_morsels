@@ -35,3 +35,15 @@ class Point:
         if self.z != other.z:
             return False
         return True
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        z = self.z + other.z
+        return Point(x, y, z)
+
+    def __sub__(self, other):
+        x = self.x - other.x
+        y = self.y - other.y
+        z = self.z - other.z
+        return Point(x, y, z)
