@@ -68,3 +68,29 @@ def meetup_date(year_int, month_int, nth=4, weekday=3):
     meetup_day = MeetupDate(year_int, month_int, nth, weekday)
     return meetup_day.date_of_meetup()
 
+
+def main():
+    print(f"This program tells you the nth specified weekday of any month.\n")
+    year = int(input(f"Enter the year: "))
+    month = int(input(f"Enter the month number: "))
+    weekday = int(input(f"Enter the weekday... \n"
+                    f"0 for Monday\n"
+                    f"1 for Tuesday\n"
+                    f"2 for Wednesday\n"
+                    f"3 for Thursday\n"
+                    f"4 for Friday\n"
+                    f"5 for Saturday\n"
+                    f"6 for Sunday\n"
+                    f"\n"
+                    f"Your Choice: "))
+    first = input(f"First(F) or Last(L)? ")
+    weeks = int(input(f"Number of weeks? "))
+    if first.lower()[0] == 'f':
+        nth = abs(weeks)
+    else:
+        nth = 0 - abs(weeks)
+    print(meetup_date(year, month, nth, weekday))
+
+
+if __name__ == "__main__":
+    main()
