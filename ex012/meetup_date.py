@@ -3,26 +3,28 @@ from datetime import date
 
 class MeetupDate:
 
-    def __init__(self, year_int: int, month_int: int):
-        self.year = year_int
-        self.month = month_int
-        self.fourth_thursday = None
-        self.set_fourth_thursday()
+    def __init__(self, year, month, nth, weekday):
+        self.year = year
+        self.month = month
+        self.nth = nth
+        self.weekday = weekday
+        self.nth_day_of_week = None
+        self.set_nth_day_of_week()
 
-    def set_fourth_thursday(self):
+    def set_nth_day_of_week(self):
         first_day_of_month = date(self.year, self.month, 1)
-        first_day_of_week = first_day_of_month.weekday()
-        if first_day_of_week < 4:
-            first_thursday = 4 - first_day_of_week
+        first_day_of_week_of_month = first_day_of_month.weekday()
+        if first_day_of_week_of_month <= self.weekday:
+            first_day_of_week = self.weekday + 1 - first_day_of_week_of_month
         else:
-            first_thursday = 11 - first_day_of_week
-        self.fourth_thursday = first_thursday + 21
+            first_day_of_week = self.weekday + 8 - first_day_of_week_of_month
+        self.nth_day_of_week = first_day_of_week + (self.nth - 1) * 7
 
     def date_of_meetup(self):
-        return date(self.year, self.month, self.fourth_thursday)
+        return date(self.year, self.month, self.nth_day_of_week)
 
 
-def meetup_date(year_int, month_int):
-    meetup_day = MeetupDate(year_int, month_int)
+def meetup_date(year_int, month_int, nth=4, weekday=3):
+    meetup_day = MeetupDate(year_int, month_int, nth, weekday)
     return meetup_day.date_of_meetup()
 
