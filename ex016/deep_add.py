@@ -8,7 +8,7 @@ def rec_deep_add(values, total):
     return total
 
 
-def deep_add(args):
-    return rec_deep_add(values=args, total=0)
+def deep_add(args, start=0):
+    return rec_deep_add(values=args, total=start)
 
 
