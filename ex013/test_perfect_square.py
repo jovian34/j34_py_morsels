@@ -57,7 +57,7 @@ class IsPerfectSquareTests(unittest.TestCase):
         self.assertFalse(is_perfect_square(m+1))
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_complex_numbers(self):
         self.assertTrue(is_perfect_square(-4, complex=True))
         self.assertTrue(is_perfect_square(-100, complex=True))

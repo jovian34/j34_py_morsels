@@ -1,4 +1,5 @@
 from math import sqrt
+from cmath import sqrt as csqrt
 
 
 def simple_perfect_square(number) -> bool:
@@ -14,14 +15,21 @@ def simple_perfect_square(number) -> bool:
     return False
 
 
-def is_perfect_square(number, complex=False) -> bool:
+def is_perfect_square(number, *, complex=False) -> bool:
     if not complex:
-        if type(number) != int or type(number) != float:
+        try:
+            number = float(number)
+        except ValueError:
             raise TypeError
         return simple_perfect_square(number)
     else:
-        if type(number) == complex:
-            return simple_perfect_square(number.real)
+        root = csqrt(number)
+        if root.imag == 0:
+            return root.real.is_integer()
+        elif root.real == 0:
+            return root.imag.is_integer()
         else:
-            return simple_perfect_square(number * -1)
+            if root.real.is_integer():
+                if root.imag.is_integer():
+                    return True
     return False
