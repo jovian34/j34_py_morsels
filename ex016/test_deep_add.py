@@ -31,7 +31,7 @@ class DeepAddTests(unittest.TestCase):
         self.assertEqual(deep_add([[Fraction(1)], Fraction(2)]), Fraction(3))
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_other_iterables(self):
         numbers = [1, 2, 3, 4]
         cubes_and_squares = ((n, (n**3, n**2)) for n in numbers)
