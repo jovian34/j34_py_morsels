@@ -39,7 +39,7 @@ class LStripTests(unittest.TestCase):
         self.assertEqual(iter(stripped), iter(stripped))
 
     # To test the Bonus part of this exercise, comment out the following line
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_function_given(self):
         numbers = [0, 2, 4, 1, 3, 5, 6]
         def is_even(n): return n % 2 == 0
