@@ -53,7 +53,7 @@ class UnicodeEscapeTests(unittest.TestCase):
                 assert temp_file.read() == contents
         self.assertEqual(contents, output)
 
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_small_hex_values(self):
         with make_file("print('\xa0\u263a\U0000263a')") as filename:
             output = run_program('unicode_escape.py', args=[filename])
