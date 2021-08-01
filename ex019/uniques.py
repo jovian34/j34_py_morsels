@@ -15,4 +15,8 @@ def uniques_only(values):
                 yield value
 
 
-
+if __name__ == "__main__":
+    items = uniques_only([2, 4, 2, 2, 34, 45, [11, 22, 33], 22, [11, 22, 33],
+                          34, 45, [11, 44, 33], 22, 11])
+    for item in items:
+        print(item)
