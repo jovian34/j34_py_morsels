@@ -59,13 +59,13 @@ class UnicodeEscapeTests(unittest.TestCase):
             output = run_program('unicode_escape.py', args=[filename])
         self.assertEqual(r"print('\u00a0\u263a\u263a')", output)
 
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_standard_input(self):
         with patch_stdin("print('\u263a\U0000263a')"):
             output = run_program('unicode_escape.py', args=['-'])
         self.assertEqual(r"print('\u263a\u263a')", output)
 
-    @unittest.expectedFailure
+    # @unittest.expectedFailure
     def test_different_styles(self):
         with make_file("print('\u00a9\u263a\U0001f31f')") as filename:
             output = run_program('unicode_escape.py',
