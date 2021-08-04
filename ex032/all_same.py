@@ -1,8 +1,6 @@
 
 def all_same(items):
     first_item = True
-    check_value = None
-    result = True
     for item in items:
         if first_item:
             check_value = item
@@ -11,6 +9,5 @@ def all_same(items):
             if item == check_value:
                 continue
             else:
-                result = False
-                break
-    return result
+                return False
+    return True
