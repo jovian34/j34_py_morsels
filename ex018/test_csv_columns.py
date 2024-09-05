@@ -52,6 +52,7 @@ class CSVColumnsTests(unittest.TestCase):
         )
 
     # To test the Bonus part of this exercise, comment out the following line
+    # @unittest.expectedFailure
     def test_ordered_dictionary(self):
         csv_data = dedent("""
             Car 1,Car 2,Car 3,Car 4,Car 5
@@ -69,6 +70,7 @@ class CSVColumnsTests(unittest.TestCase):
         self.assertEqual(list(csv_columns(StringIO(csv_data)).items()), result)
 
     # To test the Bonus part of this exercise, comment out the following line
+    # @unittest.expectedFailure
     def test_key_word_headers(self):
         result_with_given_headers = {
             'header1': ['1', '3'],
@@ -84,6 +86,7 @@ class CSVColumnsTests(unittest.TestCase):
         self.assertEqual(csv_columns(csv_file), result_with_default)
 
     # To test the Bonus part of this exercise, comment out the following line
+    @unittest.expectedFailure
     def test_allow_missing_items(self):
         result_zero_given = {'h1': ['1', '3', '5'], 'h2': ['2', '4', '0']}
         result_nothing_given = {'h1': ['1', '3', '5'], 'h2': ['2', '4', None]}
